@@ -20,20 +20,23 @@ from keras.layers import Flatten, Dense, Cropping2D, Lambda, Activation, Dropout
 # Input, normalization & cropping
 model = Sequential()
 model.add(Lambda(lambda x: (x / 255.0) - 0.5, input_shape = (160, 320, 3)))
-model.add(Cropping2D(cropping=((70,25), (0,0)))) # output size = (65, 320, 3)
+model.add(Cropping2D(cropping=((70,20), (0,0)))) # output size = (65, 320, 3)
 
 # Convolutional layer #1
-model.add(Convolution2D(filters = 14, kernel_size = 5, strides=2)) # output size = (31, 158, 14)
+model.add(Convolution2D(filters = 14, kernel_size = 5, strides=1)) # output size = (62, 316, 14)
+model.add(MaxPooling2D(pool_size=(2, 2))) # output size = (31, 158, 48)
 model.add(Dropout(0.5))
 model.add(Activation('relu'))
 
 # Convolutional layer #2
-model.add(Convolution2D(filters = 36, kernel_size = 5, strides=2)) # output size = (14, 77, 36)
+model.add(Convolution2D(filters = 36, kernel_size = 5, strides=1)) # output size = (13, 77, 36)
+model.add(MaxPooling2D(pool_size=(2, 2))) # output size = (5, 35, 48)
 model.add(Dropout(0.5))
 model.add(Activation('relu'))
 
 # Convolutional layer #3
-model.add(Convolution2D(filters = 48, kernel_size = 5, strides=2)) # output size = (5, 37, 48)
+model.add(Convolution2D(filters = 48, kernel_size = 5, strides=1)) # output size = (10, 37, 48)
+model.add(MaxPooling2D(pool_size=(2, 2))) # output size = (5, 35, 48)
 model.add(Dropout(0.5))
 model.add(Activation('relu'))
 

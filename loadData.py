@@ -46,7 +46,7 @@ def loadData(Directories):
     images = []
     measurements = []
     
-    delta = 0.5
+    delta = 0.2
     steering_delta = [0.0, delta, -delta] # center, left, right
     cnt = 0
     for line in lines:
