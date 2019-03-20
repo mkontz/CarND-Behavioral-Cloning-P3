@@ -62,6 +62,8 @@ model.add(Dense(1)) # fully connected layer
 
 # compile, fit and save
 model.compile(loss = 'mse', optimizer = 'adam')
-model.fit(X_train, y_train, validation_split=0.2, shuffle=True, nb_epoch=100)
+from keras.models import Model
+
+history_object = model.fit(X_train, y_train, validation_split=0.2, shuffle=True, nb_epoch=50)
 
 model.save('model.h5')
