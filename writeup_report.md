@@ -29,7 +29,7 @@ The goals / steps of this project are the following:
 ### Files Submitted
 
 #### 1. Are all required files submitted?
-**The submission includes a model.py file, drive.py, model.h5 a writeup report and [video.mp4](./video.mp4).**
+**The submission includes a model.py file, drive.py, model.h5 a writeup\_report.md/pdf and [video.mp4](./video.mp4).**
 
 My project includes the following files:
 
@@ -37,7 +37,7 @@ My project includes the following files:
 	* model.py calls loadData.py which loads the data to create left, center and right image/measurement pairs and also mirrors each pair to remove left/right bias.
 * drive.py for driving the car in autonomous mode which is unmodified
 * model.h5 containing a trained convolution neural network created by model.py
-* writeup.md and writeup.pdf that summarizing the results
+* writeup\_report.md and writeup\_report.pdf that summarizing the results
 
 The included files and can be used to run the simulator in autonomous mode.
 
